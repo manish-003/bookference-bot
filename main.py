@@ -53,7 +53,7 @@ async def bookinfo(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await context.bot.send_photo(chat_id=update.effective_chat.id, photo=img ,caption=caption,parse_mode="html")
 
 if __name__ == '__main__':
-    application = ApplicationBuilder().token('6043584634:AAHk5appQZWo7KVoJxwaXUMV3ex6zL1Wcjo').build()
+    application = ApplicationBuilder().token('Token').build()
     
     start_handler = CommandHandler('start', start)
     book_handler = MessageHandler(filters.TEXT & (~filters.COMMAND), bookinfo)
