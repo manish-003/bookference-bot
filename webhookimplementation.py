@@ -61,7 +61,7 @@ def searchq(bookname):
     images = soup.find_all('img',class_='bookCover', limit=6)
     titles=soup.find_all('a',class_='bookTitle', limit=6)
     authors = soup.find_all('a',class_='authorName', limit=6)
-    res = [(images[i].get('src'),  titles[i].text.split(':')[0],  authors[i].text,  baseurl+titles[i].get('href')) for i in range(6)]
+    res = [(images[i].get('src')[:-11]+images[i].get('src')[-4:],  titles[i].text.split(':')[0],  authors[i].text,  baseurl+titles[i].get('href')) for i in range(6)]
     return res
 
 def mine(bookurl):
